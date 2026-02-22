@@ -107,6 +107,99 @@ footer a{color:#7b2ff7;text-decoration:none}
   </div>
 </div>
 
+<!-- Pro Features Section -->
+<style>
+.pro-section{max-width:900px;margin:30px auto 0;padding:0 20px}
+.pro-header{text-align:center;margin-bottom:18px}
+.pro-header h2{font-size:1.3rem;color:#7b2ff7;display:flex;align-items:center;justify-content:center;gap:8px}
+.pro-header p{color:#666;font-size:.85rem;margin-top:4px}
+.pro-blur-wrap{position:relative;border-radius:12px;overflow:hidden;cursor:pointer;border:1px solid #0f3460;transition:border-color .3s}
+.pro-blur-wrap:hover{border-color:#7b2ff7}
+.pro-mock{filter:blur(4px);pointer-events:none;user-select:none;padding:24px;background:#16213e}
+.pro-mock-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+@media(max-width:600px){.pro-mock-row{grid-template-columns:1fr}}
+.pro-mock-card{background:#0a0a1a;border:1px solid #333;border-radius:8px;padding:16px}
+.pro-mock-card h4{font-size:.85rem;color:#00d2ff;margin-bottom:10px;display:flex;align-items:center;gap:6px}
+.pro-mock-label{font-size:.75rem;color:#666;margin-bottom:4px}
+.pro-mock-input{background:#16213e;border:1px solid #333;border-radius:6px;padding:8px 10px;color:#555;font-size:.8rem;width:100%;margin-bottom:8px}
+.pro-mock-select{background:#16213e;border:1px solid #333;border-radius:6px;padding:8px 10px;color:#555;font-size:.8rem;width:100%}
+.pro-mock-btn{background:#7b2ff7;color:#fff;border:none;border-radius:6px;padding:8px 16px;font-size:.8rem;opacity:.7;width:100%;margin-top:8px}
+.pro-mock-tag{display:inline-block;background:#7b2ff722;color:#7b2ff7;padding:2px 8px;border-radius:4px;font-size:.7rem;margin:2px}
+.pro-overlay{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;background:rgba(10,10,26,.55);gap:8px}
+.pro-lock{font-size:2.5rem;filter:drop-shadow(0 0 20px rgba(123,47,247,.5))}
+.pro-overlay span:last-child{color:#ccc;font-size:.9rem;font-weight:500}
+.pro-modal-bg{position:fixed;inset:0;background:rgba(0,0,0,.7);display:flex;align-items:center;justify-content:center;z-index:9999;backdrop-filter:blur(4px);padding:20px}
+.pro-modal{background:#16213e;border:1px solid #7b2ff7;border-radius:16px;padding:32px;max-width:420px;width:100%;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,.5);animation:proFadeIn .25s ease}
+@keyframes proFadeIn{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}
+.pro-modal h3{font-size:1.4rem;margin-bottom:6px;background:linear-gradient(135deg,#00d2ff,#7b2ff7);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.pro-modal .pro-price{font-size:1.1rem;color:#888;margin-bottom:20px}
+.pro-modal ul{text-align:left;list-style:none;margin-bottom:24px;padding:0}
+.pro-modal ul li{padding:8px 0;border-bottom:1px solid #1a1a3e;color:#ccc;font-size:.9rem;display:flex;align-items:center;gap:8px}
+.pro-modal ul li:last-child{border-bottom:none}
+.pro-modal ul li::before{content:'✅';font-size:.8rem}
+.pro-upgrade-btn{display:block;width:100%;padding:14px;background:linear-gradient(135deg,#00d2ff,#7b2ff7);color:#fff;border:none;border-radius:10px;font-size:1.05rem;font-weight:700;cursor:pointer;text-decoration:none;transition:transform .15s,box-shadow .15s;margin-bottom:12px}
+.pro-upgrade-btn:hover{transform:translateY(-2px);box-shadow:0 6px 24px rgba(123,47,247,.4)}
+.pro-later-btn{background:none;border:none;color:#666;cursor:pointer;font-size:.85rem;padding:8px;transition:color .2s}
+.pro-later-btn:hover{color:#aaa}
+</style>
+
+<div class="pro-section">
+<div class="pro-header">
+<h2>🔒 Pro Features</h2>
+<p>Unlock advanced scheduling capabilities</p>
+</div>
+<div class="pro-blur-wrap" onclick="document.getElementById('proModal').style.display='flex'">
+<div class="pro-mock">
+<div class="pro-mock-row">
+<div class="pro-mock-card">
+<h4>🌍 Multi-Timezone</h4>
+<div class="pro-mock-label">Primary Timezone</div>
+<div class="pro-mock-select">America/New_York (UTC-5)</div>
+<div class="pro-mock-label" style="margin-top:8px">Additional Timezones</div>
+<div><span class="pro-mock-tag">Europe/London</span><span class="pro-mock-tag">Asia/Tokyo</span><span class="pro-mock-tag">+ Add</span></div>
+<div class="pro-mock-btn">Convert & Preview All Zones</div>
+</div>
+<div class="pro-mock-card">
+<h4>🔔 Notifications</h4>
+<div class="pro-mock-label">Email Notification</div>
+<div class="pro-mock-input">team@company.com</div>
+<div class="pro-mock-label">Slack Webhook</div>
+<div class="pro-mock-input">https://hooks.slack.com/...</div>
+<div class="pro-mock-btn">Test Notification</div>
+</div>
+</div>
+<div class="pro-mock-card" style="width:100%">
+<h4>👥 Team Sharing</h4>
+<div style="display:flex;gap:8px;flex-wrap:wrap">
+<div class="pro-mock-tag">alice@team.com (editor)</div>
+<div class="pro-mock-tag">bob@team.com (viewer)</div>
+<div class="pro-mock-tag">+ Invite member</div>
+</div>
+<div class="pro-mock-input" style="margin-top:10px">Share link: https://ai-crontab.pro/shared/abc123</div>
+</div>
+</div>
+<div class="pro-overlay">
+<span class="pro-lock">🔒</span>
+<span>Click to unlock Pro features</span>
+</div>
+</div>
+</div>
+
+<div id="proModal" class="pro-modal-bg" style="display:none" onclick="if(event.target===this)this.style.display='none'">
+<div class="pro-modal">
+<h3>⏰ AI Crontab Pro</h3>
+<p class="pro-price">One-time purchase — $9</p>
+<ul>
+<li>Multi-timezone support — preview schedules across time zones</li>
+<li>Email & Slack notification integration</li>
+<li>Team sharing — collaborate on cron schedules</li>
+<li>Priority support & future updates</li>
+</ul>
+<a href="https://feifeicch.gumroad.com/l/ai-crontab-pro" target="_blank" class="pro-upgrade-btn">Upgrade to Pro — $9</a>
+<button class="pro-later-btn" onclick="document.getElementById('proModal').style.display='none'">Maybe later</button>
+</div>
+</div>
+
 <footer>
   <p>AI Crontab — Built with ❤️ | <a href="https://github.com/Lifa-su/ai-crontab" target="_blank">GitHub</a></p>
 </footer>
